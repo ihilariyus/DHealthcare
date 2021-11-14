@@ -1,0 +1,74 @@
+{% load static%}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href={% static "fonts/icomoon/style.css" %}>
+
+    <link rel="stylesheet" href={% static "css/owl.carousel.min.css" %}>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href={% static "css/bootstrap.min.css" %}>
+    
+    <!-- Style -->
+    <link rel="stylesheet" href={% static "css/style.css" %}>
+
+    <title>D-HealthCare</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand bold" href="#">DashBoard</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Your Health</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Reports
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Report1</a>
+                <a class="dropdown-item" href="#">Report2</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Cured</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">FAQ's</a>
+            </li>
+          </ul>
+          
+        </div>
+      </nav>
+      <br>
+      <br>
+      <div class="container-fluid"><h1 class="font-weight-bold">Welcome , @ {{user.username}}</h1></div>
+      <br>
+     <div class="container"><p class="font-weight-normal">Name : {{user.first_name}} </p></div>
+      <br>
+     <div class="container"><p class="font-weight-normal">Last name:  {{user.first_name}}</p></div>
+     <br><div class="container"><p class="font-weight-normal"> Status : Patient </p></div>
+     <br><div class="container"><p class="font-weight-normal">Email :  {{user.email}} </p></div>
+     <br><div class="container"><p class="font-weight-normal">ID : {{user.id}}</p></div>
+     
+     {% if user.is_authenticated %}
+     <li><a href="{% url 'logout' %}" style="text-decoration: none; color: black;">Logout</a></li><br/>
+     {% endif %}
+     <script src={% static "js/jquery-3.3.1.min.js" %}></script>
+     <script src={% static "js/popper.min.js" %}></script>
+     <script src={% static "js/bootstrap.min.js" %}></script>
+     <script src={% static "js/main.js" %}></script>
+  </body>
+</html>
